@@ -1,5 +1,5 @@
-const handleChange = e => {
-    const { value } = e.target;
+const handleChange = e=> {
+    const value =  String(e);
     const regex = /[0-9|.]/g;
     const arrString = value.split('').filter(Boolean);
     const indexFist = arrString.findIndex(item => item === '.');
@@ -22,6 +22,6 @@ const handleChange = e => {
         .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$&,') + stringDecimal;
 
     const valueInputFormat = valueRegex && valueFormat;
-    onChange?.(valueInputFormat);
+  return valueInputFormat;
   };
   handleChange("1212.12")
